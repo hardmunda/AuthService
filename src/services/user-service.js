@@ -57,7 +57,7 @@ class UserService {
             return user.id;
              
         }catch(error){
-            console.log("Something went wrong in the sign in process");
+            console.log("Something went wrong in the au process");
             throw error;
 
         }
@@ -92,6 +92,16 @@ class UserService {
 
         }catch(error){
             console.log("Something went wrong in password password comparison");
+            throw error;
+        }
+    }
+
+    isAdmin(userId){
+        try{
+            return this.userRepository.isAdmin(userId);
+ 
+        }catch(error){
+            console.log("Something went wrong in service layer");
             throw error;
         }
     }
